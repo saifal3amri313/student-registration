@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>تسجيل الطالبات | مدرسة الكندي للبنات</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--pink:#ec5b9a;--pink2:#ff8fbf;--lav:#9b7be0;--soft:#fff0f7;--ink:#4a2c4f;--muted:#8d6f93;--line:#f3c9de;--err:#d6336c}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{min-height:100vh;font-family:Tajawal,"Segoe UI",Tahoma,Arial,sans-serif;color:var(--ink);overflow-x:hidden;
+  background:radial-gradient(circle at 12% 8%,#ffd6ea 0,transparent 38%),radial-gradient(circle at 92% 18%,#e6d9ff 0,transparent 36%),radial-gradient(circle at 50% 100%,#ffe4f0 0,transparent 45%),#fff7fb;position:relative}
+.fl{position:fixed;pointer-events:none;opacity:.55;animation:float 9s ease-in-out infinite;z-index:0}
+.fl:nth-child(1){top:6%;right:6%;font-size:30px}
+.fl:nth-child(2){top:22%;left:5%;font-size:24px;animation-delay:1.5s}
+.fl:nth-child(3){top:58%;right:4%;font-size:26px;animation-delay:3s}
+.fl:nth-child(4){top:72%;left:7%;font-size:34px;animation-delay:4.5s}
+.fl:nth-child(5){top:40%;left:3%;font-size:20px;animation-delay:2s}
+.fl:nth-child(6){top:88%;right:12%;font-size:22px;animation-delay:6s}
+@keyframes float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-16px) rotate(8deg)}}
+.wrap{position:relative;z-index:1;max-width:460px;margin:0 auto;padding:26px 16px 30px}
+.hero{text-align:center;padding:10px 0 22px}
+.crest{width:92px;height:92px;margin:0 auto 10px;border-radius:50%;display:grid;place-items:center;font-size:44px;
+  background:conic-gradient(from 200deg,#ff9cc8,#c9a6ff,#ffb6d6,#ff9cc8);padding:4px;box-shadow:0 10px 26px #ec5b9a40}
+.crest i{width:100%;height:100%;border-radius:50%;background:#fff;display:grid;place-items:center;font-style:normal}
+.hero .pre{font-family:"Aref Ruqaa",Tajawal,serif;font-size:22px;color:var(--lav);margin:0;letter-spacing:1px}
+.hero h1{margin:0;font-family:"Aref Ruqaa",Tajawal,serif;font-size:52px;line-height:1.25;font-weight:700;
+  background:linear-gradient(120deg,#ec5b9a 10%,#9b7be0 55%,#ec5b9a 95%);-webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 3px 6px #ec5b9a30)}
+.hero .girls{display:inline-block;margin-top:2px;padding:5px 22px;border-radius:30px;background:linear-gradient(120deg,var(--pink),var(--lav));color:#fff;font-weight:700;font-size:17px;box-shadow:0 6px 16px #9b7be040}
+.orn{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:14px;color:var(--pink2);font-size:15px}
+.orn:before,.orn:after{content:"";height:2px;width:64px;border-radius:2px;background:linear-gradient(90deg,transparent,var(--pink2))}
+.orn:after{transform:scaleX(-1)}
+.card{background:#ffffffd9;backdrop-filter:blur(6px);border:2px solid var(--line);border-radius:30px;padding:26px 22px 24px;box-shadow:0 18px 44px #ec5b9a26;position:relative}
+.card:before{content:"🌷";position:absolute;top:-17px;left:22px;font-size:28px}
+.card h2{margin:0 0 4px;font-size:21px;color:var(--pink)}
+.sub{margin:0 0 6px;color:var(--muted);font-size:14px;line-height:1.7}
+.field{margin-top:16px}
+label{display:flex;align-items:center;gap:6px;margin-bottom:6px;font-weight:700;font-size:15px}
+label small{font-weight:400;color:var(--muted);font-size:12.5px;margin-inline-start:auto}
+input{width:100%;padding:13px 15px;border:2px solid var(--line);border-radius:16px;font-size:16px;font-family:inherit;color:var(--ink);background:var(--soft);transition:.2s}
+input::placeholder{color:#c3a8c8}
+input:focus{outline:none;border-color:var(--pink2);background:#fff;box-shadow:0 0 0 4px #ff8fbf33}
+input.bad{border-color:var(--err);background:#fff5f8}
+.hint{margin:6px 4px 0;font-size:12.5px;color:var(--muted);min-height:18px}
+.hint.bad{color:var(--err)}
+.hint.ok{color:#2f9e6e}
+.btn{width:100%;margin-top:22px;padding:15px;border:0;border-radius:18px;font-size:19px;font-weight:700;font-family:inherit;color:#fff;cursor:pointer;
+  background:linear-gradient(120deg,var(--pink),var(--lav));box-shadow:0 12px 24px #ec5b9a45;transition:.2s}
+.btn:active{transform:scale(.98)}
+.btn:disabled{opacity:.65;cursor:wait}
+.msg{margin-top:14px;padding:12px 14px;border-radius:14px;font-size:14.5px;display:none;line-height:1.7}
+.msg.err{display:block;background:#fff0f4;color:var(--err);border:1px solid #ffc2d4}
+.done{display:none;text-align:center;padding:12px 4px 4px}
+.done .big{font-size:58px;animation:pop .6s ease}
+.done h3{margin:6px 0 4px;font-size:22px;color:var(--pink)}
+.done p{margin:0 0 16px;color:var(--muted);line-height:1.8}
+.done button{border:2px solid var(--pink2);background:#fff;color:var(--pink);padding:10px 22px;border-radius:14px;font-weight:700;font-size:15px;font-family:inherit;cursor:pointer}
+@keyframes pop{0%{transform:scale(.3);opacity:0}70%{transform:scale(1.15)}100%{transform:scale(1);opacity:1}}
+.heart{position:fixed;bottom:-30px;font-size:22px;pointer-events:none;animation:rise 2.6s ease-in forwards;z-index:5}
+@keyframes rise{to{transform:translateY(-105vh) rotate(25deg);opacity:0}}
+footer{text-align:center;color:var(--muted);font-size:13px;margin-top:20px}
+@media (max-width:380px){.hero h1{font-size:44px}}
+</style>
+</head>
+<body>
+<span class="fl">🌸</span><span class="fl">✨</span><span class="fl">🦋</span><span class="fl">🌷</span><span class="fl">💖</span><span class="fl">🌼</span>
+<div class="wrap">
+  <div class="hero">
+    <div class="crest"><i>🌸</i></div>
+    <p class="pre">مدرسة</p>
+    <h1>الكندي</h1>
+    <span class="girls">للبنات</span>
+    <div class="orn">✦ ❀ ✦</div>
+  </div>
+
+  <div class="card">
+    <div id="formBox">
+      <h2>تسجيل الطالبات 🎀</h2>
+      <p class="sub">عزيزتي الطالبة، املئي المعلومات التالية بدقة لتجهيز حسابك في تطبيق المدرسة.</p>
+      <form id="f" autocomplete="off" novalidate>
+        <div class="field">
+          <label for="name">👧 الاسم الرباعي</label>
+          <input id="name" placeholder="مثال: فاطمة أحمد عبد الله علي">
+          <div class="hint" id="hName">اكتبي الأسماء الأربعة. الأسماء المركبة مثل (عبد الله) تُحسب اسمًا واحدًا.</div>
+        </div>
+        <div class="field">
+          <label for="grade">📚 الصف</label>
+          <input id="grade" placeholder="مثال: الثاني المتوسط">
+          <div class="hint" id="hGrade"></div>
+        </div>
+        <div class="field">
+          <label for="section">🌟 الشعبة</label>
+          <input id="section" list="secs" placeholder="مثال: التميز">
+          <datalist id="secs"><option value="التميز"><option value="الإبداع"></datalist>
+          <div class="hint" id="hSection">اكتبي اسم الشعبة، مثل: التميز أو الإبداع.</div>
+        </div>
+        <div class="field">
+          <label for="phone">📱 رقم الموبايل <small id="cnt">0 / 11</small></label>
+          <input id="phone" type="tel" inputmode="numeric" placeholder="07xxxxxxxxx" maxlength="11" dir="ltr" style="text-align:right">
+          <div class="hint" id="hPhone">11 رقمًا ويبدأ بـ 07</div>
+        </div>
+        <button class="btn" id="go" type="submit">تسجيل 💖</button>
+      </form>
+      <div class="msg" id="msg"></div>
+    </div>
+
+    <div class="done" id="done">
+      <div class="big">🎉</div>
+      <h3>تم تسجيلك بنجاح!</h3>
+      <p>شكرًا لكِ يا عزيزتي 🌸<br>سنوافيكِ بتفاصيل التطبيق قريبًا.</p>
+      <button id="again" type="button">تسجيل طالبة أخرى</button>
+    </div>
+  </div>
+  <footer>إدارة مدرسة الكندي للبنات 💗</footer>
+</div>
+
+<script>
+// ضع هنا رابط Google Apps Script (الذي ينتهي بـ /exec) بين علامتي الاقتباس
+const SHEET_URL = "";
+const $ = id => document.getElementById(id);
+
+const toEn = s => String(s).replace(/[٠-٩]/g, c => c.charCodeAt(0) - 1632).replace(/[۰-۹]/g, c => c.charCodeAt(0) - 1776);
+const JOIN = new Set(["عبد","ابو","أبو","ابي","أبي","ام","أم","ذو","بن","ابن","بنت","آل","ال"]);
+function namesCount(name) {
+  const w = name.trim().split(/\s+/).filter(Boolean);
+  let n = 0;
+  for (let i = 0; i < w.length; i++) { n++; if (JOIN.has(w[i]) && i + 1 < w.length) i++; }
+  return n;
+}
+const ARABIC = /^[\u0621-\u064A\u0671\u064B-\u0652\s]+$/;
+function checkName(v) {
+  v = v.trim();
+  if (!v) return "اكتبي الاسم الرباعي";
+  if (!ARABIC.test(v)) return "اكتبي الاسم بالحروف العربية فقط";
+  if (v.split(/\s+/).some(x => x.length < 2 && !JOIN.has(x))) return "تأكدي من كتابة كل اسم كاملًا";
+  if (namesCount(v) < 4) return "الاسم يجب أن يكون رباعيًا (أربعة أسماء)";
+  return "";
+}
+function checkPhone(v) {
+  v = toEn(v);
+  if (!/^\d+$/.test(v)) return "اكتبي أرقامًا فقط";
+  if (v.length !== 11) return "الرقم يجب أن يكون 11 رقمًا (الآن " + v.length + ")";
+  if (!v.startsWith("07")) return "الرقم يجب أن يبدأ بـ 07";
+  return "";
+}
+function checkText(v, what) {
+  v = v.trim();
+  if (v.length < 2) return "اكتبي " + what;
+  if (/[<>{}\/\\]/.test(v)) return "يوجد رموز غير مسموحة";
+  return "";
+}
+function setHint(inp, hint, err, okText) {
+  inp.classList.toggle("bad", !!err);
+  hint.classList.toggle("bad", !!err);
+  hint.classList.toggle("ok", !err && !!okText);
+  if (err) hint.textContent = err; else if (okText) hint.textContent = okText;
+}
+const hintDefault = { name: $("hName").textContent, section: $("hSection").textContent, phone: $("hPhone").textContent };
+
+$("phone").addEventListener("input", e => {
+  e.target.value = toEn(e.target.value).replace(/\D/g, "").slice(0, 11);
+  $("cnt").textContent = e.target.value.length + " / 11";
+  if (e.target.value.length === 11) setHint(e.target, $("hPhone"), checkPhone(e.target.value), "✔ رقم صحيح");
+  else { e.target.classList.remove("bad"); $("hPhone").className = "hint"; $("hPhone").textContent = hintDefault.phone; }
+});
+$("name").addEventListener("blur", e => { if (e.target.value) setHint(e.target, $("hName"), checkName(e.target.value), "✔ الاسم رباعي"); });
+$("name").addEventListener("input", e => { if (e.target.classList.contains("bad") && !checkName(e.target.value)) setHint(e.target, $("hName"), "", "✔ الاسم رباعي"); });
+
+function showMsg(t) { const m = $("msg"); m.textContent = t; m.className = "msg err"; }
+function hearts() {
+  for (let i = 0; i < 18; i++) {
+    const h = document.createElement("span");
+    h.className = "heart"; h.textContent = ["💖", "🌸", "✨", "💗", "🦋"][i % 5];
+    h.style.left = Math.random() * 100 + "vw"; h.style.animationDelay = Math.random() * .8 + "s";
+    document.body.appendChild(h); setTimeout(() => h.remove(), 3600);
+  }
+}
+const MSGS = {
+  duplicate: "هذه الطالبة مسجَّلة مسبقًا بنفس الاسم والرقم 🌸",
+  invalid: "تأكدي من صحة المعلومات المكتوبة وأعيدي المحاولة."
+};
+
+$("f").addEventListener("submit", async ev => {
+  ev.preventDefault();
+  $("msg").className = "msg";
+  const d = { name: $("name").value.trim().replace(/\s+/g, " "), grade: $("grade").value.trim(), section: $("section").value.trim(), phone: toEn($("phone").value) };
+  const e1 = checkName(d.name), e2 = checkText(d.grade, "الصف"), e3 = checkText(d.section, "اسم الشعبة"), e4 = checkPhone(d.phone);
+  setHint($("name"), $("hName"), e1); setHint($("grade"), $("hGrade"), e2); setHint($("section"), $("hSection"), e3); setHint($("phone"), $("hPhone"), e4);
+  if (e1 || e2 || e3 || e4) return showMsg("يرجى تصحيح الحقول المُلوّنة بالأحمر 💗");
+  if (!SHEET_URL) return showMsg("خدمة التسجيل غير مفعّلة بعد.");
+  const btn = $("go"); btn.disabled = true; btn.textContent = "جارٍ التسجيل…";
+  try {
+    const r = await fetch(SHEET_URL, { method: "POST", body: JSON.stringify(d) });
+    const j = await r.json();
+    if (j.ok) { $("formBox").style.display = "none"; $("done").style.display = "block"; hearts(); }
+    else showMsg(MSGS[j.error] || "حدث خطأ، حاولي مرة أخرى.");
+  } catch { showMsg("تعذّر الاتصال. تحققي من الإنترنت وحاولي مرة أخرى."); }
+  btn.disabled = false; btn.textContent = "تسجيل 💖";
+});
+$("again").addEventListener("click", () => {
+  $("f").reset(); $("cnt").textContent = "0 / 11";
+  ["name", "grade", "section", "phone"].forEach(i => $(i).classList.remove("bad"));
+  $("done").style.display = "none"; $("formBox").style.display = "block";
+});
+</script>
+</body>
+</html>
